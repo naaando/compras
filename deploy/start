@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+set -e
+
+composer install --no-interaction --no-progress --optimize-autoloader --no-dev
+
+php artisan optimize
+
+exec apache2-foreground

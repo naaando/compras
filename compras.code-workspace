@@ -1,0 +1,21 @@
+{
+	"folders": [
+		{
+			"path": "app"
+		},
+		{
+			"path": "backend"
+		},
+		{
+			"path": "nfcescrapper"
+		},
+		{
+			"path": "nfce"
+		}
+	],
+	"settings": {
+		"java.configuration.updateBuildConfiguration": "interactive",
+		"java.compile.nullAnalysis.mode": "disabled",
+		"php.version": "8.2"
+	}
+}
