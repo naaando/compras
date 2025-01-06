@@ -16,6 +16,18 @@ class NfcesPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Notas fiscais'),
+        actions: [
+          IconButton(
+            icon: const Icon(Remix.link),
+            tooltip: 'Adicionar link',
+            onPressed: () => _openLinkPopup(context),
+          ),
+          IconButton(
+            icon: const Icon(Remix.qr_code_line),
+            tooltip: 'Importar nota fiscal via QR Code',
+            onPressed: () => _openScanQrPage(context),
+          )
+        ],
       ),
       body: BlocBuilder<NfcesCubit, NfcesState>(
         builder: (context, state) => state.when(
@@ -73,7 +85,7 @@ class NfcesPage extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         onPressed: () => _openScanQrPage(context),
         tooltip: 'Importar nota fiscal via QR Code',
-        child: const Icon(Remix.qr_code_fill),
+        child: const Icon(Remix.qr_code_line),
       ),
     );
   }
@@ -109,6 +121,37 @@ class NfcesPage extends StatelessWidget {
       MaterialPageRoute(
         builder: (context) => const ScanQrPage(),
       ),
+    );
+  }
+
+  void _openLinkPopup(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (context) {
+        var textEditingController = TextEditingController();
+        return AlertDialog(
+          title: const Text('Adicionar link'),
+          content: TextField(
+            controller: textEditingController,
+          ),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.pop(context),
+              child: const Text('Cancelar'),
+            ),
+            TextButton(
+              onPressed: () async {
+                await context
+                    .read<NfcesCubit>()
+                    .adicionarQrCode(textEditingController.text);
+
+                Navigator.pop(context);
+              },
+              child: const Text('Adicionar'),
+            ),
+          ],
+        );
+      },
     );
   }
 }
