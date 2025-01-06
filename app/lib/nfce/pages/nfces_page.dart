@@ -55,7 +55,7 @@ class NfcesPage extends StatelessWidget {
                 ),
               ],
             ),
-            onRefresh: () => context.read<NfcesCubit>().fetch(),
+            onRefresh: _refresh(context),
           ),
           error: (String errorMessage, NfcesFilter filter) =>
               Text(errorMessage),
@@ -141,11 +141,15 @@ class NfcesPage extends StatelessWidget {
             ),
             TextButton(
               onPressed: () async {
+                Navigator.pop(context);
+
                 await context
                     .read<NfcesCubit>()
                     .adicionarQrCode(textEditingController.text);
 
-                Navigator.pop(context);
+                if (context.mounted) {
+                  _refresh(context);
+                }
               },
               child: const Text('Adicionar'),
             ),
@@ -153,5 +157,9 @@ class NfcesPage extends StatelessWidget {
         );
       },
     );
+  }
+
+  _refresh(BuildContext context) {
+    context.read<NfcesCubit>().fetch();
   }
 }
