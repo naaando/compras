@@ -1,5 +1,5 @@
 # Use an official PHP runtime as a parent image
-FROM php:8-apache
+FROM php:8.3-apache
 
 # Copy php.ini file
 COPY deploy/php.ini /usr/local/etc/php/
