@@ -6,7 +6,9 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class AuthPage extends StatelessWidget {
-  const AuthPage({super.key});
+  final Object? error;
+
+  const AuthPage({super.key, this.error});
 
   @override
   Widget build(BuildContext context) {
@@ -19,13 +21,25 @@ class AuthPage extends StatelessWidget {
           ),
           Center(
             child: FilledButton(
-              onPressed: () {
+              onPressed: () async {
                 User user = Provider.of<User>(context, listen: false);
-                GoogleAuth().login(user);
+
+                try {
+                  await GoogleAuth().login(user);
+                } catch (error) {
+                  Navigator.of(context).pushReplacement<void, void>(
+                    MaterialPageRoute<void>(
+                      builder: (BuildContext context) => AuthPage(error: error),
+                    ),
+                  );
+                }
               },
               child: const Text('Login com google'),
             ),
-          )
+          ),
+          Center(
+            child: Text(error.toString()),
+          ),
         ],
       ),
     );

@@ -35,7 +35,6 @@ class GoogleAuth {
       user.token = userAndToken['token'];
       user.update();
     } catch (error) {
-      print(error);
       rethrow;
     }
   }
