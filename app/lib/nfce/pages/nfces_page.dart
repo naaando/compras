@@ -55,7 +55,7 @@ class NfcesPage extends StatelessWidget {
                 ),
               ],
             ),
-            onRefresh: _refresh(context),
+            onRefresh: () => _refresh(context),
           ),
           error: (String errorMessage, NfcesFilter filter) =>
               Text(errorMessage),
