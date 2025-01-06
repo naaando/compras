@@ -1,7 +1,7 @@
 import 'package:app_compras/lista-de-compras/cubit/lista_de_compras_cubit.dart';
 import 'package:app_compras/lista-de-compras/cubit/lista_de_compras_state.dart';
 import 'package:app_compras/lista-de-compras/models/produto.dart';
-import 'package:app_compras/pages/add_item_de_compra_page.dart';
+import 'package:app_compras/lista-de-compras/pages/add_item_de_compra_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:remixicon/remixicon.dart';

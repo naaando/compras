@@ -3,7 +3,7 @@ import 'package:app_compras/nfce/components/lista_produtos.dart';
 import 'package:app_compras/nfce/cubit/nfces_cubit.dart';
 import 'package:app_compras/nfce/cubit/nfces_states.dart';
 import 'package:app_compras/nfce/models/nfce.dart';
-import 'package:app_compras/pages/scan_qr_page.dart';
+import 'package:app_compras/nfce/pages/scan_qr_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:remixicon/remixicon.dart';
