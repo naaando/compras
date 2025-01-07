@@ -29,15 +29,29 @@ class NfcesCubit extends Cubit<NfcesState> {
   Future<bool> adicionarQrCode(String qrCode) async {
     final res = await nfceRepository.adicionarQrCode(qrCode);
 
-    if (res.statusCode != 200) {
-      return false;
+    if (res.statusCode == 200) {
+      fetch();
+      return true;
     }
+
+    return false;
+  }
+
+  Future<bool> adicionarChave(
+    String estado,
+    String chaveAcesso,
+  ) async {
+    final res = await nfceRepository.adicionarChave(
+      estado,
+      chaveAcesso,
+    );
 
     if (res.statusCode == 200) {
       fetch();
+      return true;
     }
 
-    return true;
+    return false;
   }
 
   visualizarProdutos({Nfce? nfce}) {

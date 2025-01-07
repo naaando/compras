@@ -55,6 +55,25 @@ class NfceRepository {
     );
   }
 
+  Future<http.Response> adicionarChave(
+    String estado,
+    String chaveAcesso,
+  ) async {
+    final url = Config.serverHost.resolve('api/nfce');
+
+    return await client.post(
+      url,
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+      },
+      body: jsonEncode({
+        'estado': estado,
+        'chave_acesso': chaveAcesso,
+      }),
+    );
+  }
+
   // void salvar(String nfceUrl, String html) async {
   //   final url = Uri.http(Config.serverHost, 'api/nfce');
 
