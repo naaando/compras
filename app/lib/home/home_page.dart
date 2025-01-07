@@ -1,6 +1,6 @@
 import 'package:app_compras/estoque/pages/estoque_page.dart';
 import 'package:app_compras/nfce/pages/nfces_page.dart';
-import 'package:app_compras/pages/lista_de_compras_page.dart';
+import 'package:app_compras/lista-de-compras/pages/lista_de_compras_page.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:remixicon/remixicon.dart';

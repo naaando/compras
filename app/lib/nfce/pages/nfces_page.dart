@@ -3,7 +3,7 @@ import 'package:app_compras/nfce/components/lista_produtos.dart';
 import 'package:app_compras/nfce/cubit/nfces_cubit.dart';
 import 'package:app_compras/nfce/cubit/nfces_states.dart';
 import 'package:app_compras/nfce/models/nfce.dart';
-import 'package:app_compras/pages/scan_qr_page.dart';
+import 'package:app_compras/nfce/pages/scan_qr_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:remixicon/remixicon.dart';
@@ -16,6 +16,18 @@ class NfcesPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Notas fiscais'),
+        actions: [
+          IconButton(
+            icon: const Icon(Remix.link),
+            tooltip: 'Adicionar link',
+            onPressed: () => _openLinkPopup(context),
+          ),
+          IconButton(
+            icon: const Icon(Remix.qr_code_line),
+            tooltip: 'Importar nota fiscal via QR Code',
+            onPressed: () => _openScanQrPage(context),
+          )
+        ],
       ),
       body: BlocBuilder<NfcesCubit, NfcesState>(
         builder: (context, state) => state.when(
@@ -43,7 +55,7 @@ class NfcesPage extends StatelessWidget {
                 ),
               ],
             ),
-            onRefresh: () => context.read<NfcesCubit>().fetch(),
+            onRefresh: () => _refresh(context),
           ),
           error: (String errorMessage, NfcesFilter filter) =>
               Text(errorMessage),
@@ -73,7 +85,7 @@ class NfcesPage extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         onPressed: () => _openScanQrPage(context),
         tooltip: 'Importar nota fiscal via QR Code',
-        child: const Icon(Remix.qr_code_fill),
+        child: const Icon(Remix.qr_code_line),
       ),
     );
   }
@@ -110,5 +122,44 @@ class NfcesPage extends StatelessWidget {
         builder: (context) => const ScanQrPage(),
       ),
     );
+  }
+
+  void _openLinkPopup(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (context) {
+        var textEditingController = TextEditingController();
+        return AlertDialog(
+          title: const Text('Adicionar link'),
+          content: TextField(
+            controller: textEditingController,
+          ),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.pop(context),
+              child: const Text('Cancelar'),
+            ),
+            TextButton(
+              onPressed: () async {
+                Navigator.pop(context);
+
+                await context
+                    .read<NfcesCubit>()
+                    .adicionarQrCode(textEditingController.text);
+
+                if (context.mounted) {
+                  _refresh(context);
+                }
+              },
+              child: const Text('Adicionar'),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  _refresh(BuildContext context) {
+    context.read<NfcesCubit>().fetch();
   }
 }

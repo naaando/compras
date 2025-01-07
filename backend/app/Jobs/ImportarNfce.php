@@ -33,7 +33,7 @@ class ImportarNfce implements ShouldQueue
         $url = $this->nfce->url;
 
         if (empty($url)) {
-            $accessKey = $this->nfce->access_key;
+            $accessKey = $this->nfce->chave_acesso;
             $state = $this->nfce->state;
             $versionQrcode = '2';
             $environmentType = '1'; // 1 - Produção, 2 - Homologação
