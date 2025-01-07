@@ -28,12 +28,13 @@ class GoogleAuth {
       GoogleSignInAuthentication auth = await account!.authentication;
       var userAndToken = await _exchangeIdTokenWithSanctumToken(auth.idToken);
 
-      user.id = userAndToken['user']['id'];
-      user.name = userAndToken['user']['name'];
-      user.email = userAndToken['user']['email'];
-      user.picture = userAndToken['user']['picture'];
-      user.token = userAndToken['token'];
-      user.update();
+      user.set(
+        id: userAndToken['user']['id'],
+        name: userAndToken['user']['name'],
+        email: userAndToken['user']['email'],
+        picture: userAndToken['user']['picture'],
+        token: userAndToken['token'],
+      );
     } catch (error) {
       rethrow;
     }
