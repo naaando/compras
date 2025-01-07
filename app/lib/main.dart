@@ -41,13 +41,17 @@ Future<void> main() async {
       // Setting to 1.0 will profile 100% of sampled transactions:
       options.profilesSampleRate = 1.0;
     },
-    appRunner: () => runApp(ChangeNotifierProvider(
-      create: (context) => User(),
-      child: MultiBlocProvider(
-        providers: blocProviders,
-        child: const MyApp(),
-      ),
-    )),
+    appRunner: () async {
+      final user = await User.restore();
+
+      runApp(ChangeNotifierProvider(
+        create: (context) => user,
+        child: MultiBlocProvider(
+          providers: blocProviders,
+          child: const MyApp(),
+        ),
+      ));
+    },
   );
 }
 
