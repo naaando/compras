@@ -30,8 +30,12 @@ mixin _$NfceItem {
   String? get total_price => throw _privateConstructorUsedError;
   String? get category => throw _privateConstructorUsedError;
 
+  /// Serializes this NfceItem to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of NfceItem
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $NfceItemCopyWith<NfceItem> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -63,6 +67,8 @@ class _$NfceItemCopyWithImpl<$Res, $Val extends NfceItem>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of NfceItem
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -145,6 +151,8 @@ class __$$NfceItemImplCopyWithImpl<$Res>
       _$NfceItemImpl _value, $Res Function(_$NfceItemImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of NfceItem
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -261,12 +269,14 @@ class _$NfceItemImpl implements _NfceItem {
                 other.category == category));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, id, name, code, price, quantity,
       currency, unity_of_measure, total_price, category);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of NfceItem
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$NfceItemImplCopyWith<_$NfceItemImpl> get copyWith =>
@@ -313,8 +323,11 @@ abstract class _NfceItem implements NfceItem {
   String? get total_price;
   @override
   String? get category;
+
+  /// Create a copy of NfceItem
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$NfceItemImplCopyWith<_$NfceItemImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

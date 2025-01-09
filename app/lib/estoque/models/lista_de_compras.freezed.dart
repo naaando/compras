@@ -23,8 +23,12 @@ mixin _$ListaDeCompras {
   int get id => throw _privateConstructorUsedError;
   List<Produto> get produtos => throw _privateConstructorUsedError;
 
+  /// Serializes this ListaDeCompras to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of ListaDeCompras
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ListaDeComprasCopyWith<ListaDeCompras> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -48,6 +52,8 @@ class _$ListaDeComprasCopyWithImpl<$Res, $Val extends ListaDeCompras>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of ListaDeCompras
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -87,6 +93,8 @@ class __$$ListaDeComprasDefaultImplCopyWithImpl<$Res>
       $Res Function(_$ListaDeComprasDefaultImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ListaDeCompras
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -140,12 +148,14 @@ class _$ListaDeComprasDefaultImpl implements _ListaDeComprasDefault {
             const DeepCollectionEquality().equals(other._produtos, _produtos));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType, id, const DeepCollectionEquality().hash(_produtos));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ListaDeCompras
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ListaDeComprasDefaultImplCopyWith<_$ListaDeComprasDefaultImpl>
@@ -172,8 +182,11 @@ abstract class _ListaDeComprasDefault implements ListaDeCompras {
   int get id;
   @override
   List<Produto> get produtos;
+
+  /// Create a copy of ListaDeCompras
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ListaDeComprasDefaultImplCopyWith<_$ListaDeComprasDefaultImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
