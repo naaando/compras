@@ -387,22 +387,79 @@ typedef $$ProdutoTableTableUpdateCompanionBuilder = ProdutoTableCompanion
   Value<String> name,
 });
 
+class $$ProdutoTableTableFilterComposer
+    extends Composer<_$AppDatabase, $ProdutoTableTable> {
+  $$ProdutoTableTableFilterComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnFilters<int> get id => $composableBuilder(
+      column: $table.id, builder: (column) => ColumnFilters(column));
+
+  ColumnFilters<String> get name => $composableBuilder(
+      column: $table.name, builder: (column) => ColumnFilters(column));
+}
+
+class $$ProdutoTableTableOrderingComposer
+    extends Composer<_$AppDatabase, $ProdutoTableTable> {
+  $$ProdutoTableTableOrderingComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnOrderings<int> get id => $composableBuilder(
+      column: $table.id, builder: (column) => ColumnOrderings(column));
+
+  ColumnOrderings<String> get name => $composableBuilder(
+      column: $table.name, builder: (column) => ColumnOrderings(column));
+}
+
+class $$ProdutoTableTableAnnotationComposer
+    extends Composer<_$AppDatabase, $ProdutoTableTable> {
+  $$ProdutoTableTableAnnotationComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  GeneratedColumn<int> get id =>
+      $composableBuilder(column: $table.id, builder: (column) => column);
+
+  GeneratedColumn<String> get name =>
+      $composableBuilder(column: $table.name, builder: (column) => column);
+}
+
 class $$ProdutoTableTableTableManager extends RootTableManager<
     _$AppDatabase,
     $ProdutoTableTable,
     ProdutoTableData,
     $$ProdutoTableTableFilterComposer,
     $$ProdutoTableTableOrderingComposer,
+    $$ProdutoTableTableAnnotationComposer,
     $$ProdutoTableTableCreateCompanionBuilder,
-    $$ProdutoTableTableUpdateCompanionBuilder> {
+    $$ProdutoTableTableUpdateCompanionBuilder,
+    (
+      ProdutoTableData,
+      BaseReferences<_$AppDatabase, $ProdutoTableTable, ProdutoTableData>
+    ),
+    ProdutoTableData,
+    PrefetchHooks Function()> {
   $$ProdutoTableTableTableManager(_$AppDatabase db, $ProdutoTableTable table)
       : super(TableManagerState(
           db: db,
           table: table,
-          filteringComposer:
-              $$ProdutoTableTableFilterComposer(ComposerState(db, table)),
-          orderingComposer:
-              $$ProdutoTableTableOrderingComposer(ComposerState(db, table)),
+          createFilteringComposer: () =>
+              $$ProdutoTableTableFilterComposer($db: db, $table: table),
+          createOrderingComposer: () =>
+              $$ProdutoTableTableOrderingComposer($db: db, $table: table),
+          createComputedFieldComposer: () =>
+              $$ProdutoTableTableAnnotationComposer($db: db, $table: table),
           updateCompanionCallback: ({
             Value<int> id = const Value.absent(),
             Value<String> name = const Value.absent(),
@@ -419,37 +476,28 @@ class $$ProdutoTableTableTableManager extends RootTableManager<
             id: id,
             name: name,
           ),
+          withReferenceMapper: (p0) => p0
+              .map((e) => (e.readTable(table), BaseReferences(db, table, e)))
+              .toList(),
+          prefetchHooksCallback: null,
         ));
 }
 
-class $$ProdutoTableTableFilterComposer
-    extends FilterComposer<_$AppDatabase, $ProdutoTableTable> {
-  $$ProdutoTableTableFilterComposer(super.$state);
-  ColumnFilters<int> get id => $state.composableBuilder(
-      column: $state.table.id,
-      builder: (column, joinBuilders) =>
-          ColumnFilters(column, joinBuilders: joinBuilders));
-
-  ColumnFilters<String> get name => $state.composableBuilder(
-      column: $state.table.name,
-      builder: (column, joinBuilders) =>
-          ColumnFilters(column, joinBuilders: joinBuilders));
-}
-
-class $$ProdutoTableTableOrderingComposer
-    extends OrderingComposer<_$AppDatabase, $ProdutoTableTable> {
-  $$ProdutoTableTableOrderingComposer(super.$state);
-  ColumnOrderings<int> get id => $state.composableBuilder(
-      column: $state.table.id,
-      builder: (column, joinBuilders) =>
-          ColumnOrderings(column, joinBuilders: joinBuilders));
-
-  ColumnOrderings<String> get name => $state.composableBuilder(
-      column: $state.table.name,
-      builder: (column, joinBuilders) =>
-          ColumnOrderings(column, joinBuilders: joinBuilders));
-}
-
+typedef $$ProdutoTableTableProcessedTableManager = ProcessedTableManager<
+    _$AppDatabase,
+    $ProdutoTableTable,
+    ProdutoTableData,
+    $$ProdutoTableTableFilterComposer,
+    $$ProdutoTableTableOrderingComposer,
+    $$ProdutoTableTableAnnotationComposer,
+    $$ProdutoTableTableCreateCompanionBuilder,
+    $$ProdutoTableTableUpdateCompanionBuilder,
+    (
+      ProdutoTableData,
+      BaseReferences<_$AppDatabase, $ProdutoTableTable, ProdutoTableData>
+    ),
+    ProdutoTableData,
+    PrefetchHooks Function()>;
 typedef $$EstoqueTableTableCreateCompanionBuilder = EstoqueTableCompanion
     Function({
   Value<int> id,
@@ -461,22 +509,79 @@ typedef $$EstoqueTableTableUpdateCompanionBuilder = EstoqueTableCompanion
   Value<String> name,
 });
 
+class $$EstoqueTableTableFilterComposer
+    extends Composer<_$AppDatabase, $EstoqueTableTable> {
+  $$EstoqueTableTableFilterComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnFilters<int> get id => $composableBuilder(
+      column: $table.id, builder: (column) => ColumnFilters(column));
+
+  ColumnFilters<String> get name => $composableBuilder(
+      column: $table.name, builder: (column) => ColumnFilters(column));
+}
+
+class $$EstoqueTableTableOrderingComposer
+    extends Composer<_$AppDatabase, $EstoqueTableTable> {
+  $$EstoqueTableTableOrderingComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnOrderings<int> get id => $composableBuilder(
+      column: $table.id, builder: (column) => ColumnOrderings(column));
+
+  ColumnOrderings<String> get name => $composableBuilder(
+      column: $table.name, builder: (column) => ColumnOrderings(column));
+}
+
+class $$EstoqueTableTableAnnotationComposer
+    extends Composer<_$AppDatabase, $EstoqueTableTable> {
+  $$EstoqueTableTableAnnotationComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  GeneratedColumn<int> get id =>
+      $composableBuilder(column: $table.id, builder: (column) => column);
+
+  GeneratedColumn<String> get name =>
+      $composableBuilder(column: $table.name, builder: (column) => column);
+}
+
 class $$EstoqueTableTableTableManager extends RootTableManager<
     _$AppDatabase,
     $EstoqueTableTable,
     EstoqueTableData,
     $$EstoqueTableTableFilterComposer,
     $$EstoqueTableTableOrderingComposer,
+    $$EstoqueTableTableAnnotationComposer,
     $$EstoqueTableTableCreateCompanionBuilder,
-    $$EstoqueTableTableUpdateCompanionBuilder> {
+    $$EstoqueTableTableUpdateCompanionBuilder,
+    (
+      EstoqueTableData,
+      BaseReferences<_$AppDatabase, $EstoqueTableTable, EstoqueTableData>
+    ),
+    EstoqueTableData,
+    PrefetchHooks Function()> {
   $$EstoqueTableTableTableManager(_$AppDatabase db, $EstoqueTableTable table)
       : super(TableManagerState(
           db: db,
           table: table,
-          filteringComposer:
-              $$EstoqueTableTableFilterComposer(ComposerState(db, table)),
-          orderingComposer:
-              $$EstoqueTableTableOrderingComposer(ComposerState(db, table)),
+          createFilteringComposer: () =>
+              $$EstoqueTableTableFilterComposer($db: db, $table: table),
+          createOrderingComposer: () =>
+              $$EstoqueTableTableOrderingComposer($db: db, $table: table),
+          createComputedFieldComposer: () =>
+              $$EstoqueTableTableAnnotationComposer($db: db, $table: table),
           updateCompanionCallback: ({
             Value<int> id = const Value.absent(),
             Value<String> name = const Value.absent(),
@@ -493,36 +598,28 @@ class $$EstoqueTableTableTableManager extends RootTableManager<
             id: id,
             name: name,
           ),
+          withReferenceMapper: (p0) => p0
+              .map((e) => (e.readTable(table), BaseReferences(db, table, e)))
+              .toList(),
+          prefetchHooksCallback: null,
         ));
 }
 
-class $$EstoqueTableTableFilterComposer
-    extends FilterComposer<_$AppDatabase, $EstoqueTableTable> {
-  $$EstoqueTableTableFilterComposer(super.$state);
-  ColumnFilters<int> get id => $state.composableBuilder(
-      column: $state.table.id,
-      builder: (column, joinBuilders) =>
-          ColumnFilters(column, joinBuilders: joinBuilders));
-
-  ColumnFilters<String> get name => $state.composableBuilder(
-      column: $state.table.name,
-      builder: (column, joinBuilders) =>
-          ColumnFilters(column, joinBuilders: joinBuilders));
-}
-
-class $$EstoqueTableTableOrderingComposer
-    extends OrderingComposer<_$AppDatabase, $EstoqueTableTable> {
-  $$EstoqueTableTableOrderingComposer(super.$state);
-  ColumnOrderings<int> get id => $state.composableBuilder(
-      column: $state.table.id,
-      builder: (column, joinBuilders) =>
-          ColumnOrderings(column, joinBuilders: joinBuilders));
-
-  ColumnOrderings<String> get name => $state.composableBuilder(
-      column: $state.table.name,
-      builder: (column, joinBuilders) =>
-          ColumnOrderings(column, joinBuilders: joinBuilders));
-}
+typedef $$EstoqueTableTableProcessedTableManager = ProcessedTableManager<
+    _$AppDatabase,
+    $EstoqueTableTable,
+    EstoqueTableData,
+    $$EstoqueTableTableFilterComposer,
+    $$EstoqueTableTableOrderingComposer,
+    $$EstoqueTableTableAnnotationComposer,
+    $$EstoqueTableTableCreateCompanionBuilder,
+    $$EstoqueTableTableUpdateCompanionBuilder,
+    (
+      EstoqueTableData,
+      BaseReferences<_$AppDatabase, $EstoqueTableTable, EstoqueTableData>
+    ),
+    EstoqueTableData,
+    PrefetchHooks Function()>;
 
 class $AppDatabaseManager {
   final _$AppDatabase _db;

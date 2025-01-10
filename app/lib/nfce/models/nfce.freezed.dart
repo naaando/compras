@@ -95,8 +95,13 @@ mixin _$Nfce {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
+
+  /// Serializes this Nfce to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Nfce
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $NfceCopyWith<Nfce> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -118,6 +123,8 @@ class _$NfceCopyWithImpl<$Res, $Val extends Nfce>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Nfce
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -168,6 +175,8 @@ class __$$NfceProcessedImplCopyWithImpl<$Res>
       _$NfceProcessedImpl _value, $Res Function(_$NfceProcessedImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Nfce
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -276,7 +285,7 @@ class _$NfceProcessedImpl implements NfceProcessed {
             const DeepCollectionEquality().equals(other._items, _items));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -288,7 +297,9 @@ class _$NfceProcessedImpl implements NfceProcessed {
       total_before_discount,
       const DeepCollectionEquality().hash(_items));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Nfce
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$NfceProcessedImplCopyWith<_$NfceProcessedImpl> get copyWith =>
@@ -415,8 +426,11 @@ abstract class NfceProcessed implements Nfce {
   String? get issue_date;
   String? get total_before_discount;
   List<NfceItem> get items;
+
+  /// Create a copy of Nfce
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$NfceProcessedImplCopyWith<_$NfceProcessedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -440,6 +454,8 @@ class __$$NfceProcessingImplCopyWithImpl<$Res>
       _$NfceProcessingImpl _value, $Res Function(_$NfceProcessingImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Nfce
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -503,11 +519,13 @@ class _$NfceProcessingImpl implements NfceProcessing {
                 other.access_key == access_key));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, id, url, access_key);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Nfce
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$NfceProcessingImplCopyWith<_$NfceProcessingImpl> get copyWith =>
@@ -624,8 +642,11 @@ abstract class NfceProcessing implements Nfce {
   String? get url;
   @override
   String? get access_key;
+
+  /// Create a copy of Nfce
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$NfceProcessingImplCopyWith<_$NfceProcessingImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

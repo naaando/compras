@@ -78,6 +78,9 @@ class _$ListaDeComprasStateCopyWithImpl<$Res, $Val extends ListaDeComprasState>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of ListaDeComprasState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -97,6 +100,8 @@ class __$$LoadingImplCopyWithImpl<$Res>
       _$LoadingImpl _value, $Res Function(_$LoadingImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ListaDeComprasState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -142,7 +147,9 @@ class _$LoadingImpl implements _Loading {
   int get hashCode =>
       Object.hash(runtimeType, const DeepCollectionEquality().hash(_itens));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ListaDeComprasState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$LoadingImplCopyWith<_$LoadingImpl> get copyWith =>
@@ -221,7 +228,10 @@ abstract class _Loading implements ListaDeComprasState {
   factory _Loading({final List<String> itens}) = _$LoadingImpl;
 
   List<String> get itens;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of ListaDeComprasState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$LoadingImplCopyWith<_$LoadingImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -242,6 +252,8 @@ class __$$DataImplCopyWithImpl<$Res>
   __$$DataImplCopyWithImpl(_$DataImpl _value, $Res Function(_$DataImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ListaDeComprasState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -287,7 +299,9 @@ class _$DataImpl implements _Data {
   int get hashCode =>
       Object.hash(runtimeType, const DeepCollectionEquality().hash(_itens));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ListaDeComprasState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$DataImplCopyWith<_$DataImpl> get copyWith =>
@@ -366,7 +380,10 @@ abstract class _Data implements ListaDeComprasState {
   factory _Data({final List<Produto> itens}) = _$DataImpl;
 
   List<Produto> get itens;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of ListaDeComprasState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$DataImplCopyWith<_$DataImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -388,6 +405,8 @@ class __$$ErrorImplCopyWithImpl<$Res>
       _$ErrorImpl _value, $Res Function(_$ErrorImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ListaDeComprasState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -428,7 +447,9 @@ class _$ErrorImpl implements _Error {
   @override
   int get hashCode => Object.hash(runtimeType, errorMessage);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ListaDeComprasState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ErrorImplCopyWith<_$ErrorImpl> get copyWith =>
@@ -507,7 +528,10 @@ abstract class _Error implements ListaDeComprasState {
   factory _Error({final String errorMessage}) = _$ErrorImpl;
 
   String get errorMessage;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of ListaDeComprasState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ErrorImplCopyWith<_$ErrorImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

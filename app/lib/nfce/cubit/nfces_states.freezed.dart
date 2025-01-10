@@ -19,7 +19,9 @@ mixin _$NfcesFilter {
   Visualizacao get visualizacao => throw _privateConstructorUsedError;
   Nfce? get nfce => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of NfcesFilter
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $NfcesFilterCopyWith<NfcesFilter> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -45,6 +47,8 @@ class _$NfcesFilterCopyWithImpl<$Res, $Val extends NfcesFilter>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of NfcesFilter
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -63,6 +67,8 @@ class _$NfcesFilterCopyWithImpl<$Res, $Val extends NfcesFilter>
     ) as $Val);
   }
 
+  /// Create a copy of NfcesFilter
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $NfceCopyWith<$Res>? get nfce {
@@ -98,6 +104,8 @@ class __$$NfcesFilterImplCopyWithImpl<$Res>
       _$NfcesFilterImpl _value, $Res Function(_$NfcesFilterImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of NfcesFilter
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -145,7 +153,9 @@ class _$NfcesFilterImpl implements _NfcesFilter {
   @override
   int get hashCode => Object.hash(runtimeType, visualizacao, nfce);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of NfcesFilter
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$NfcesFilterImplCopyWith<_$NfcesFilterImpl> get copyWith =>
@@ -161,8 +171,11 @@ abstract class _NfcesFilter implements NfcesFilter {
   Visualizacao get visualizacao;
   @override
   Nfce? get nfce;
+
+  /// Create a copy of NfcesFilter
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$NfcesFilterImplCopyWith<_$NfcesFilterImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -221,7 +234,9 @@ mixin _$NfcesState {
   }) =>
       throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of NfcesState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $NfcesStateCopyWith<NfcesState> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -247,6 +262,8 @@ class _$NfcesStateCopyWithImpl<$Res, $Val extends NfcesState>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of NfcesState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -260,6 +277,8 @@ class _$NfcesStateCopyWithImpl<$Res, $Val extends NfcesState>
     ) as $Val);
   }
 
+  /// Create a copy of NfcesState
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $NfcesFilterCopyWith<$Res> get filter {
@@ -291,6 +310,8 @@ class __$$LoadingImplCopyWithImpl<$Res>
       _$LoadingImpl _value, $Res Function(_$LoadingImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of NfcesState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -331,7 +352,9 @@ class _$LoadingImpl implements _Loading {
   @override
   int get hashCode => Object.hash(runtimeType, filter);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of NfcesState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$LoadingImplCopyWith<_$LoadingImpl> get copyWith =>
@@ -417,8 +440,11 @@ abstract class _Loading implements NfcesState {
 
   @override
   NfcesFilter get filter;
+
+  /// Create a copy of NfcesState
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$LoadingImplCopyWith<_$LoadingImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -445,6 +471,8 @@ class __$$OfflineImplCopyWithImpl<$Res>
       _$OfflineImpl _value, $Res Function(_$OfflineImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of NfcesState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -485,7 +513,9 @@ class _$OfflineImpl implements _Offline {
   @override
   int get hashCode => Object.hash(runtimeType, filter);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of NfcesState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$OfflineImplCopyWith<_$OfflineImpl> get copyWith =>
@@ -571,8 +601,11 @@ abstract class _Offline implements NfcesState {
 
   @override
   NfcesFilter get filter;
+
+  /// Create a copy of NfcesState
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$OfflineImplCopyWith<_$OfflineImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -597,6 +630,8 @@ class __$$DataImplCopyWithImpl<$Res>
   __$$DataImplCopyWithImpl(_$DataImpl _value, $Res Function(_$DataImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of NfcesState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -651,7 +686,9 @@ class _$DataImpl implements _Data {
   int get hashCode => Object.hash(
       runtimeType, const DeepCollectionEquality().hash(_nfces), filter);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of NfcesState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$DataImplCopyWith<_$DataImpl> get copyWith =>
@@ -740,8 +777,11 @@ abstract class _Data implements NfcesState {
   List<Nfce> get nfces;
   @override
   NfcesFilter get filter;
+
+  /// Create a copy of NfcesState
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$DataImplCopyWith<_$DataImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -767,6 +807,8 @@ class __$$ErrorImplCopyWithImpl<$Res>
       _$ErrorImpl _value, $Res Function(_$ErrorImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of NfcesState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -814,7 +856,9 @@ class _$ErrorImpl implements _Error {
   @override
   int get hashCode => Object.hash(runtimeType, errorMessage, filter);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of NfcesState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ErrorImplCopyWith<_$ErrorImpl> get copyWith =>
@@ -902,8 +946,11 @@ abstract class _Error implements NfcesState {
   String get errorMessage;
   @override
   NfcesFilter get filter;
+
+  /// Create a copy of NfcesState
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ErrorImplCopyWith<_$ErrorImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
